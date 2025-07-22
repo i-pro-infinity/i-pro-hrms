@@ -1,4 +1,6 @@
 {% load i18n %}
+{% load widget_tweaks %}
+
 <div>
     <div
         class="oh-general__tab-target oh-profile-section mb-4"
@@ -34,15 +36,15 @@
                         <label class="oh-label" for="firstname"
                             >{% trans "First Name" %}</label
                         >
-                        {{form.employee_first_name}}
-                        {{form.employee_first_name.errors}}
+                         {{ form.employee_first_name|attr:"disabled:disabled" }}
+                        {{form.employee_first_name.errors|attr:"disabled:disabled" }}
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6">
                         <label class="oh-label" for="lastname"
                             >{% trans "Last Name" %}</label
                         >
-                        {{form.employee_last_name}}
-                        {{form.employee_last_name.errors}}
+                        {{form.employee_last_name|attr:"disabled:disabled" }}
+                        {{form.employee_last_name.errors|attr:"disabled:disabled" }}
                     </div>
                 </div>
                 <div class="row">

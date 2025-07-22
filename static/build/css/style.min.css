@@ -9018,9 +9018,10 @@ select:focus-visible {
 }
 
 .oh-input:disabled {
-  background-color: transparent;
-  padding-left: 0px;
-  padding-right: 0px;
+  border: 1px solid hsl(213, 22%, 84%);
+  background-color: #f8f9fa !important;
+  padding: 0.8rem 1.25rem;
+  cursor: not-allowed;
 }
 
 .oh-input--small {

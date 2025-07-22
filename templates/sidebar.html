@@ -77,18 +77,18 @@ function initializeSummernote(candId,searchWords,) {
       {% else %}
       <img
       src="{{request.session.selected_company_instance.icon}}"
-      style="width: 34px; border-radius: 3px"
+      style="width: 150px; border-radius: 3px"
       />
       {% endif %}
     </span>
-    <div class="oh-sidebar__company-details">
+    <!-- <div class="oh-sidebar__company-details">
       <span class="oh-sidebar__company-title" style="font-size: 13px"
       >{{request.session.selected_company_instance.company}}.</span
       >
       <a href="#" class="oh-sidebar__company-link" style="font-size: 10px"
       >{% trans request.session.selected_company_instance.text %}</a
       >
-    </div>
+    </div> -->
     {% else %}
     <span class="mr-3">
       {% if request.user.employee_get.employee_work_info.company_id.icon == None %}
@@ -108,7 +108,7 @@ function initializeSummernote(candId,searchWords,) {
       >{{request.user.employee_get.employee_work_info.company_id}}.</span
       >
       <a href="#" class="oh-sidebar__company-link" style="font-size: 10px"
-      >{% trans "My Company" %}</a
+      >{% trans "Sunil Kumar V" %}</a
       >
     </div>
     {% endif %}

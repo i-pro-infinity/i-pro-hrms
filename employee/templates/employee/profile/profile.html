@@ -1,4 +1,6 @@
-{% extends 'index.html' %} {% load i18n %} {% block content %}
+{% extends 'index.html' %} {% load i18n %} {% load static %}  {# Load static before using {% static '...' %} #} {% block content %}
+
+<script src="{% static 'js/country.js' %}"></script>
 
 <section
 	class="oh-wrapper oh-main__topbar oh-profile-section__topbar"
@@ -40,7 +42,6 @@
 </div>
 
 <script>
-	{% include 'country.js' %}
 	$(document).ready(function() {
 
 		  // Active tab script
