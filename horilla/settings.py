@@ -29,15 +29,7 @@ env = environ.Env(
         str,
         "django-insecure-j8op9)1q8$1&0^s&p*_0%d#pr@w9qj@1o=3#@d=a(^@9@zd@%j",
     ),
-    ALLOWED_HOSTS=[
-    'hrms-internal-brhbeybgbye7gqbs.centralindia-01.azurewebsites.net',
-    'localhost',
-    '127.0.0.1',
-]
-    CSRF_TRUSTED_ORIGINS=[
-    'https://hrms-internal-brhbeybgbye7gqbs.centralindia-01.azurewebsites.net',
-    'http://localhost:8000',
-]
+     ALLOWED_HOSTS=(list, []),
 )
 
 env.read_env(os.path.join(BASE_DIR, ".env"), overwrite=True)
@@ -48,7 +40,17 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = env("ALLOWED_HOSTS")
+
+ALLOWED_HOSTS = [
+    "hrms-internal-brhbeybgbye7gqbs.centralindia-01.azurewebsites.net",
+    "localhost",
+    "127.0.0.1",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://hrms-internal-brhbeybgbye7gqbs.centralindia-01.azurewebsites.net",
+    "http://localhost:8000",
+]
 
 # Application definition
 
