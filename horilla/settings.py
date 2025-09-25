@@ -42,7 +42,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
 
 
-ALLOWED_HOSTS = [
+ALLOWED_HOSTS = env("ALLOWED_HOSTS") or [
     "hrms-internal-brhbeybgbye7gqbs.centralindia-01.azurewebsites.net",
     "localhost",
     "127.0.0.1",
@@ -50,7 +50,7 @@ ALLOWED_HOSTS = [
 wh = os.environ.get("WEBSITE_HOSTNAME")
 if wh and wh not in ALLOWED_HOSTS: ALLOWED_HOSTS.append(wh)
 
-CSRF_TRUSTED_ORIGINS = [
+CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS") or [
     "https://hrms-internal-brhbeybgbye7gqbs.centralindia-01.azurewebsites.net",
     "http://localhost:8000",
 ]
@@ -257,3 +257,5 @@ if not DEBUG:
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
