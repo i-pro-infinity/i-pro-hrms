@@ -30,6 +30,7 @@ env = environ.Env(
         "django-insecure-j8op9)1q8$1&0^s&p*_0%d#pr@w9qj@1o=3#@d=a(^@9@zd@%j",
     ),
      ALLOWED_HOSTS=(list, []),
+    CSRF_TRUSTED_ORIGINS=(list, []),
 )
 
 env.read_env(os.path.join(BASE_DIR, ".env"), overwrite=True)
@@ -46,6 +47,8 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
 ]
+wh = os.environ.get("WEBSITE_HOSTNAME")
+if wh and wh not in ALLOWED_HOSTS: ALLOWED_HOSTS.append(wh)
 
 CSRF_TRUSTED_ORIGINS = [
     "https://hrms-internal-brhbeybgbye7gqbs.centralindia-01.azurewebsites.net",
