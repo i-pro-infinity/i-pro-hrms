@@ -29,8 +29,15 @@ env = environ.Env(
         str,
         "django-insecure-j8op9)1q8$1&0^s&p*_0%d#pr@w9qj@1o=3#@d=a(^@9@zd@%j",
     ),
-    ALLOWED_HOSTS=(list, ["*"]),
-    CSRF_TRUSTED_ORIGINS=(list, ["http://localhost:8000"]),
+    ALLOWED_HOSTS=[
+    'hrms-internal-brhbeybgbye7gqbs.centralindia-01.azurewebsites.net',
+    'localhost',
+    '127.0.0.1',
+]
+    CSRF_TRUSTED_ORIGINS=[
+    'https://hrms-internal-brhbeybgbye7gqbs.centralindia-01.azurewebsites.net',
+    'http://localhost:8000',
+]
 )
 
 env.read_env(os.path.join(BASE_DIR, ".env"), overwrite=True)
@@ -241,3 +248,7 @@ if not DEBUG:
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
